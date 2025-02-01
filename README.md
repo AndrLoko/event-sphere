@@ -1,7 +1,3 @@
-# EventSphere
-
-<img src="https://i.ibb.co/Vn3dBdW/Group-1-Photoroom-1.png" alt="EventSphere Logo" width="200">
-
 ## Project Description
 **EventSphere** is a dynamic platform for planning, discovering, and managing events. Users can create events, register for them, and leave reviews, fostering an active community.
 

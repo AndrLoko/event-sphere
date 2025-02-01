@@ -1,0 +1,62 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('/public/fonts/Roboto-Bold.ttf') format('ttf');
+    font-weight: 700; 
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/public/fonts/Roboto-Medium.ttf') format('ttf');
+    font-weight: 500; 
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/public/fonts/Roboto-Regular.ttf') format('ttf'); /* Это будет regular */
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/public/fonts/Roboto-SemiBold.ttf') format('ttf');
+    font-weight: 600; 
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/public/fonts/Inter-Bold.ttf') format('ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/public/fonts/Inter-Regular.ttf') format('ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/public/fonts/Inter-SemiBold.ttf') format('ttf');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('/public/fonts/Raleway-Bold.ttf') format('ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SecularOne';
+    src: url('/public/fonts/SecularOne-Regular.ttf') format('ttf');
+    font-weight: 400;
+    font-style: normal;
+}
