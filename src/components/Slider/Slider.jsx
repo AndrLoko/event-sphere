@@ -25,8 +25,8 @@ const Slider = () => {
     <div className="slider">
       <img src={slides[currentIndex]} className='slides'  alt={`Slide ${currentIndex + 1}`} />
       <div className="controls">
-        <button onClick={prevSlide}><img src="../../../public/arrow.png" className='arrow-left' alt="" /></button>
-        <button onClick={nextSlide}><img src="../../../public/arrow.png" alt="" className='arrow-right' /></button>
+        <button onClick={prevSlide} className='controls__button'><img src="../../../public/arrow.png" className='arrow-left' alt="" /></button>
+        <button onClick={nextSlide} className='controls__button'><img src="../../../public/arrow.png" alt="" className='arrow-right' /></button>
       </div>
     </div>
   );
