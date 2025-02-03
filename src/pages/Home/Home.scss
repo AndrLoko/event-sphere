@@ -1,3 +1,8 @@
+.categories__wrapper {
+    border-bottom: 2px solid #F2F2F2;
+    padding-bottom: 80px;
+}
+
 .container {
     width: 100%; 
     max-width: 1280px; 
@@ -7,4 +12,7 @@
 
 .grid__categories {
     display: grid;
-}
+    margin-top: 40px;
+    grid-template-columns: repeat(8, 1fr); /* 8 колонок */
+    justify-items: center; /* Центрирование по горизонтали */
+  }
