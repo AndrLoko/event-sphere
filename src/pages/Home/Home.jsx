@@ -2,12 +2,13 @@ import React from 'react'
 import './Home.scss'
 import Slider from '../../components/Slider/Slider.jsx'
 import Category from '../../components/UI/category/category.jsx'
+import Location from '../../components/Location/Location.jsx'
+import Card from '../../components/UI/card//Card.jsx'
 
 export default function Home() {
   return (
     <>
         <Slider />
-        <div className="categories__wrapper">
             <div className="container">
                 <div className="grid__categories">
                     <Category link="../../../public/SVG.png" text="Music"/>
@@ -19,8 +20,10 @@ export default function Home() {
                     <Category link="../../../public/SVG-6.png" text="Business"/>
                     <Category link="../../../public/SVG-7.png" text="Food & Drink"/>
                 </div>
+                <Location />
+                <Card />
             </div>
-        </div>
+
     </>
   )
 }
