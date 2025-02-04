@@ -5,19 +5,19 @@
     margin-top: 30px;
     margin-bottom: 30px;
   }
-.location::after {
+  
+  .location::after {
     content: '';
     position: absolute;
     bottom: -30px;
     left: 50%;
-    transform: translateX(-50%);
-    width: 100vw; 
+    transform: translateX(-50%); /* Центрируем полоску по горизонтали */
+    width: 100vw; /* Полоска будет растягиваться на всю ширину окна */
     height: 2px;
     background-color: #F2F2F2;
-    z-index: 1; 
-}
+    z-index: 1;
+  }
 
-  
   .select {
     font-family: Roboto;
     font-weight: 600;
@@ -26,12 +26,14 @@
     margin-right: 13px;
   }
   
+
   .select-wrapper {
     position: relative;
     display: inline-block;
     cursor: pointer;
   }
   
+
   .select-icon {
     margin-right: 13px;
     width: 20px;
@@ -41,7 +43,7 @@
   .select-choice {
     position: absolute;
     margin-top: 10px;
-    padding: 10px 0 10px 0;
+    padding: 10px 0;
     top: 100%;
     left: 0;
     background: white;
@@ -50,11 +52,11 @@
     width: 150px;
     display: none;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 2;
   }
   
   .select-choice.open {
     display: block;
-    z-index: 2;
   }
   
   .select-item {

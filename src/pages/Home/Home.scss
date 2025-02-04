@@ -1,6 +1,12 @@
+body {
+    overflow-x: hidden;
+}
+
 .container {
     width: 100%; 
-    max-width: 1280px; 
+    max-width: 1274px; 
+    padding-right: 15px;
+    padding-left: 15px;
     margin: 0 auto; 
     box-sizing: border-box; 
 }
@@ -24,4 +30,13 @@
     height: 2px;
     background-color: #F2F2F2;
     z-index: 1; 
+    overflow-x: hidden; 
+
+}
+
+.grid__card {
+    display: grid;
+    margin-top: 55px;
+    grid-template-columns: repeat(4, 1fr); 
+    row-gap: 20px;
 }
