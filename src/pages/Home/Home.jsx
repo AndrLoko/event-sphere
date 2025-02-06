@@ -1,9 +1,14 @@
 import React from 'react';
 import './Home.scss';
+import '../../styles/reset.scss'
 import Slider from '../../components/Slider/Slider';
 import Category from '../../components/UI/Category/Category';
 import Location from '../../components/Location/Location';
 import Card from '../../components/UI/Card/Card';
+import Footer from '../../components/Footer/Footer';
+
+import TagGoing from '../../components/UI/tag/TagGoing.jsx'
+import TagSales from '../../components/UI/tag/TagSales'
 
 const categories = [
   { link: 'SVG.png', text: 'Music' },
@@ -34,6 +39,7 @@ export default function Home() {
           <Card />
         </div>
       </div>
+      <Footer />
     </>
   );
 }
