@@ -34,9 +34,6 @@ export default function Home() {
         <Location />
         <div className="grid__card">
           <Card />
-          <Card />
-          <Card />
-          <Card />
         </div>
       </div>
       <Footer />

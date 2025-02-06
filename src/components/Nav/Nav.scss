@@ -49,12 +49,12 @@
         position: absolute;
         margin-right: 19px;
 
-        width: 44px;  // Указываем конкретный размер
-        height: 44px; // Указываем тот же размер
+        width: 44px;  
+        height: 44px; 
 
         background-color: #3762F0;
         border: none;
-        border-radius: 50%; // Обеспечиваем круглый вид
+        border-radius: 50%; 
     
 
         & > img {
@@ -74,15 +74,18 @@
         margin-left: auto;
     }
 
+    &__item {
+    }
+
     &__link {
+        
         color: #39364F;
         text-decoration: none;
         cursor: pointer;
         margin-right: 40px;
         font-size: 13px;
         font-weight: 400;
-
-
+        
     }
     &__link-btn {
         color: white;
@@ -95,4 +98,3 @@
     }
     
 }
-

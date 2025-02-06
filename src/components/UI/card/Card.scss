@@ -21,19 +21,19 @@
     &__price,
     &__descr {
         margin: 0;
-        font-family: Roboto, sans-serif; // Добавим fallback шрифт
-        padding-left: 13px; // Добавляем отступ для текстовых элементов
+        font-family: Roboto, sans-serif; 
+        padding-left: 13px; 
     }
 
     &__title {
-        margin-bottom: 4px;
+        margin-bottom: 8px;
         color: #3A3247;
-        font-size: 20px;
-        font-weight: 500; // Добавим жирность для заголовка
+        font-size: 19px;
+        font-weight: 500; 
     }
 
     &__date {
-        margin-bottom: 16px; // Уменьшим отступ для лучшего визуального баланса
+        margin-bottom: 16px; 
         color: #3A3247;
         font-size: 16px;
     }
@@ -42,12 +42,12 @@
         margin-bottom: 15px;
         color: #3A3247;
         font-size: 16px;
-        font-weight: 500; // Жирность для цены
+        font-weight: 500; 
     }
 
     &__descr {
         color: #585163;
         font-size: 16px;
-        line-height: 1.4; // Добавим межстрочный интервал для лучшей читаемости
+        line-height: 1.4; 
     }
 }
