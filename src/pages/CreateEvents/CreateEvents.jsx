@@ -19,7 +19,6 @@ export default function CreateEvents() {
       descr: inputDescr
     };
 
-
     let events = JSON.parse(localStorage.getItem("events")) || [];
     events.push(newEvent);
     localStorage.setItem("events", JSON.stringify(events));

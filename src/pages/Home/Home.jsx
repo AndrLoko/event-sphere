@@ -4,9 +4,9 @@ import '../../styles/reset.scss';
 import Slider from '../../components/Slider/Slider';
 import Category from '../../components/UI/Category/Category';
 import Location from '../../components/Location/Location';
-import Card from '../../components/UI/card/Card';
+import Card from '../../components/UI/card/Card.jsx';
 import Footer from '../../components/Footer/Footer';
-import CreateEvents from '../CreateEvents/CreateEvents'; // Импортируем компонент CreateEvents
+import useEventsFromStorage from '../../hooks/useEventsFromStorage';
 
 const categories = [
   { link: 'SVG.png', text: 'Music' },
@@ -20,13 +20,7 @@ const categories = [
 ];
 
 export default function Home() {
-  const [events, setEvents] = useState([]);
-
-  // Загружаем события из localStorage
-  useEffect(() => {
-    const eventsFromStorage = JSON.parse(localStorage.getItem("events")) || [];
-    setEvents(eventsFromStorage);
-  }, []); // Пустой массив зависимостей, чтобы загрузить данные только один раз при монтировании
+  const events = useEventsFromStorage()
 
   return (
     <>
@@ -40,10 +34,7 @@ export default function Home() {
 
         <Location />
         
-        {/* Добавляем компонент CreateEvents с пропсом onEventCreate */}
-
         <div className="grid__card">
-          {/* Отображаем созданные события */}
           {events.map(event => (
             <Card key={event.id} {...event} />
           ))}
