@@ -21,6 +21,7 @@ const categories = [
   { link: 'SVG-7.png', text: 'Food & Drink' },
 ];
 
+
 export default function Home() {
   return (
     <>
