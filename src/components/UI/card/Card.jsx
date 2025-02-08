@@ -4,14 +4,15 @@ import './Card.scss';
 import TagGoing from '../tag/TagGoing';
 import TagSales from '../tag/TagSales';
 
-export default function Card({ title, date, price, descr }) {
+export default function Card({ title, week, time, price, descr, img, tag = <TagGoing /> }) {
   return (
     <div className='card'>
       <a className="card__wrapper">
-        <img src='../../../../public/Card-1.png' alt="" className="card__img" />
+        <img src={img} alt="" className="card__img" />
+        <div className="card__tag">{tag}</div>
         <h2 className='card__title'>{title}</h2>
-        <p className='card__date'>{date}</p>
-        <p className='card__price'>{price}</p>
+        <p className='card__date'>{week} • {time}</p>
+        <p className='card__price'>From ${price}</p>
         <p className='card__descr'>{descr}</p>
       </a>
     </div>

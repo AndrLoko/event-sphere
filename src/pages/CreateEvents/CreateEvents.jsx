@@ -3,9 +3,12 @@ import { useNavigate } from 'react-router-dom';
 
 export default function CreateEvents() {
   const [inputTitle, setInputTitle] = useState(""); 
-  const [inputDate, setInputDate] = useState(""); 
+  const [inputTime, setInputTime] = useState(""); 
   const [inputPrice, setInputPrice] = useState("");
   const [inputDescr, setInputDescr] = useState("");
+  
+  const [image, setImage] = useState('../../../public/Card-1.png')
+  const [tag, setTag] = useState() 
   const [events, setEvents] = useState([]);
 
   const navigate = useNavigate();  
@@ -19,8 +22,10 @@ export default function CreateEvents() {
   function handleClick() {
     const newEvent = {
       id: Date.now(),
+      img: image,
+      tag: tag,
       title: inputTitle,
-      date: inputDate,
+      time: inputTime,
       price: inputPrice,
       descr: inputDescr
     };
@@ -29,13 +34,13 @@ export default function CreateEvents() {
     setEvents(updatedEvents); // Обновляем состояние
     localStorage.setItem("events", JSON.stringify(updatedEvents)); // Записываем в localStorage
 
-    // Очищаем инпуты
+
     setInputTitle("");
-    setInputDate("");
+    setInputTime("");
     setInputPrice("");
     setInputDescr("");
 
-    navigate('/'); // Переход на главную
+    navigate('/'); 
   }
 
   return (
@@ -47,9 +52,9 @@ export default function CreateEvents() {
         placeholder="Event Title"
       />
       <input 
-        type="date" 
-        value={inputDate} 
-        onChange={(e) => setInputDate(e.target.value)} 
+        type="time" 
+        value={inputTime} 
+        onChange={(e) => setInputTime(e.target.value)} 
       />
       <input 
         type="number" 

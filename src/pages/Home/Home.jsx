@@ -6,6 +6,7 @@ import Category from '../../components/UI/Category/Category';
 import Location from '../../components/Location/Location';
 import Card from '../../components/UI/card/Card.jsx';
 import Footer from '../../components/Footer/Footer';
+import defaultEvents from '../../constants/events.js'
 
 const categories = [
   { link: 'SVG.png', text: 'Music' },
@@ -26,6 +27,7 @@ export default function Home() {
     setEvents(storedEvents);
   }, []);
 
+
   return (
     <>
       <Slider />
@@ -39,6 +41,13 @@ export default function Home() {
         <Location />
         
         <div className="grid__card">
+
+          {defaultEvents.map((event) => (
+            <Card title={event.title} week={event.week}  time={event.time} price={event.price} descr={event.description} img={event.image} />
+          ))}
+           
+
+
           {events.map(event => (
             <Card key={event.id} {...event} />
           ))}
