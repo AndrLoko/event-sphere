@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export default function CreateEvents() {
@@ -6,9 +6,15 @@ export default function CreateEvents() {
   const [inputDate, setInputDate] = useState(""); 
   const [inputPrice, setInputPrice] = useState("");
   const [inputDescr, setInputDescr] = useState("");
+  const [events, setEvents] = useState([]);
 
   const navigate = useNavigate();  
 
+  // Загружаем события из localStorage при монтировании
+  useEffect(() => {
+    const eventsFromStorage = JSON.parse(localStorage.getItem("events")) || [];
+    setEvents(eventsFromStorage);
+  }, []);
 
   function handleClick() {
     const newEvent = {
@@ -19,18 +25,17 @@ export default function CreateEvents() {
       descr: inputDescr
     };
 
-    let events = JSON.parse(localStorage.getItem("events")) || [];
-    events.push(newEvent);
-    localStorage.setItem("events", JSON.stringify(events));
+    const updatedEvents = [...events, newEvent]; // Добавляем новое событие в массив
+    setEvents(updatedEvents); // Обновляем состояние
+    localStorage.setItem("events", JSON.stringify(updatedEvents)); // Записываем в localStorage
 
-
+    // Очищаем инпуты
     setInputTitle("");
     setInputDate("");
     setInputPrice("");
     setInputDescr("");
 
-
-    navigate('/');
+    navigate('/'); // Переход на главную
   }
 
   return (

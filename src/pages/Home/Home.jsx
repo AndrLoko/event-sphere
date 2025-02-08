@@ -6,7 +6,6 @@ import Category from '../../components/UI/Category/Category';
 import Location from '../../components/Location/Location';
 import Card from '../../components/UI/card/Card.jsx';
 import Footer from '../../components/Footer/Footer';
-import useEventsFromStorage from '../../hooks/useEventsFromStorage';
 
 const categories = [
   { link: 'SVG.png', text: 'Music' },
@@ -20,7 +19,12 @@ const categories = [
 ];
 
 export default function Home() {
-  const events = useEventsFromStorage()
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    const storedEvents = JSON.parse(localStorage.getItem("events")) || [];
+    setEvents(storedEvents);
+  }, []);
 
   return (
     <>
