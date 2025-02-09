@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../../components/Footer/Footer.jsx'
 
 export default function CreateEvents() {
   const [inputTitle, setInputTitle] = useState(""); 
@@ -13,7 +14,7 @@ export default function CreateEvents() {
 
   const navigate = useNavigate();  
 
-  // Загружаем события из localStorage при монтировании
+
   useEffect(() => {
     const eventsFromStorage = JSON.parse(localStorage.getItem("events")) || [];
     setEvents(eventsFromStorage);
@@ -30,9 +31,9 @@ export default function CreateEvents() {
       descr: inputDescr
     };
 
-    const updatedEvents = [...events, newEvent]; // Добавляем новое событие в массив
-    setEvents(updatedEvents); // Обновляем состояние
-    localStorage.setItem("events", JSON.stringify(updatedEvents)); // Записываем в localStorage
+    const updatedEvents = [...events, newEvent]; 
+    setEvents(updatedEvents); 
+    localStorage.setItem("events", JSON.stringify(updatedEvents)); 
 
 
     setInputTitle("");
@@ -69,6 +70,8 @@ export default function CreateEvents() {
         placeholder="Event Description"
       />
       <button onClick={handleClick}>Создать событие</button>
+
+      <Footer />
     </div>
   );
 }

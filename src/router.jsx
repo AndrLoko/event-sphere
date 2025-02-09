@@ -3,6 +3,7 @@ import React from 'react'
 import { Routes, Route} from 'react-router'
 
 import Nav from './components/Nav/Nav'
+import Footer from './components/Footer/Footer.jsx'
 import Home from './pages/Home/Home'
 import CreateEvents from './pages/CreateEvents/CreateEvents'
 import FindTickets from './pages/FindTickets/FindTickets'

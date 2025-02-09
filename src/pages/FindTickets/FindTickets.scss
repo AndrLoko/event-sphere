@@ -1,0 +1,6 @@
+.find-tickets__grid {
+    display: grid;
+    margin-top: 55px;
+    grid-template-columns: repeat(4, 1fr); 
+    row-gap: 20px;
+}

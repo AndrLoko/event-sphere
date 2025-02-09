@@ -45,8 +45,6 @@ export default function Home() {
           {defaultEvents.map((event) => (
             <Card title={event.title} week={event.week}  time={event.time} price={event.price} descr={event.description} img={event.image} />
           ))}
-           
-
 
           {events.map(event => (
             <Card key={event.id} {...event} />
