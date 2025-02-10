@@ -29,7 +29,7 @@ export default function Home() {
 
 
   return (
-    <>
+    <main>
       <Slider />
       <div className="container">
         <div className="grid__categories">
@@ -52,6 +52,6 @@ export default function Home() {
         </div>
       </div>
       <Footer />
-    </>
+    </main>
   );
 }

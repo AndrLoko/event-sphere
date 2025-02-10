@@ -7,6 +7,7 @@ export default function CreateEvents() {
   const [inputTime, setInputTime] = useState(""); 
   const [inputPrice, setInputPrice] = useState("");
   const [inputDescr, setInputDescr] = useState("");
+  const [inputCity, setInputCity] = useState(""); 
   
   const [image, setImage] = useState('../../../public/Card-1.png')
   const [tag, setTag] = useState() 
@@ -28,7 +29,8 @@ export default function CreateEvents() {
       title: inputTitle,
       time: inputTime,
       price: inputPrice,
-      descr: inputDescr
+      descr: inputDescr,
+      city: inputCity
     };
 
     const updatedEvents = [...events, newEvent]; 
@@ -68,6 +70,12 @@ export default function CreateEvents() {
         value={inputDescr} 
         onChange={(e) => setInputDescr(e.target.value)}  
         placeholder="Event Description"
+      />
+      <input 
+        type="text" 
+        value={inputCity} 
+        onChange={(e) => setInputCity(e.target.value)}  
+        placeholder="City"
       />
       <button onClick={handleClick}>Создать событие</button>
 

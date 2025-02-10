@@ -12,7 +12,7 @@ export default function FindTickets() {
   }, []);
 
   return (
-    <section>
+    <main>
       <div className="find-tickets__wrapper">
         <div className="container">
           <div className="find-tickets__grid">
@@ -28,6 +28,6 @@ export default function FindTickets() {
       </div>
 
     <Footer />
-    </section>
+    </main>
   )
 }
