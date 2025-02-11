@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer.jsx'
 
 export default function CreateEvents() {
+  const [inputFile, setInputFile] = useState("")
   const [inputTitle, setInputTitle] = useState(""); 
   const [inputTime, setInputTime] = useState(""); 
   const [inputPrice, setInputPrice] = useState("");
@@ -24,13 +25,13 @@ export default function CreateEvents() {
   function handleClick() {
     const newEvent = {
       id: Date.now(),
-      img: image,
       tag: tag,
+      img: image,
       title: inputTitle,
       time: inputTime,
       price: inputPrice,
       descr: inputDescr,
-      city: inputCity
+      city: inputCity,
     };
 
     const updatedEvents = [...events, newEvent]; 
