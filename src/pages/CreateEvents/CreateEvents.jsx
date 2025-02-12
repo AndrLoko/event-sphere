@@ -14,6 +14,16 @@ export default function CreateEvents() {
   const [tag, setTag] = useState() 
   const [events, setEvents] = useState([]);
 
+  const [week, setWeek] = useState(""); 
+  const [isOpen, setIsOpen] = useState(true);
+
+  const weeks = ["Monday", "Thuesday", "Wensday", "Thurday", "Friday", "Saturday", "Sunday"];
+
+  const handleSelect = (week) => {
+    setWeek(week);
+    setIsOpen(false); 
+  };
+
   const navigate = useNavigate();  
 
   useEffect (() => {
@@ -50,6 +60,7 @@ export default function CreateEvents() {
       tag: tag,
       title: inputTitle,
       time: inputTime,
+      week: week,
       price: inputPrice,
       descr: inputDescr,
       city: inputCity,
@@ -69,6 +80,8 @@ export default function CreateEvents() {
   }
 
   return (
+
+    
     <div className="input__wrapper">
       <input 
         type="file" 
@@ -76,12 +89,33 @@ export default function CreateEvents() {
         onChange={handleImageUpload} 
       />
       {image && <img src={image} alt="" className='create__image' />}
+
+      <div className="create-wrapper" onClick={() => setIsOpen(!isOpen)}>
+            <div className={`create-choice ${isOpen ? "open" : ""}`}>
+               {weeks.map((week, index) => (
+               <div
+                   key={index}
+                   className="create-item"
+                   onClick={() => handleSelect(week)}
+               >
+                   {week}
+              </div>
+              ))}
+          </div>
+      </div>
       <input 
         type="text" 
         value={inputTitle} 
         onChange={(e) => setInputTitle(e.target.value)}  
         placeholder="Event Title"
       />
+      <input
+            type="text"
+            className="create__input"
+            placeholder="Week"
+            value={week}
+            onClick={() => setIsOpen(!isOpen)}
+        />
       <input 
         type="time" 
         value={inputTime} 

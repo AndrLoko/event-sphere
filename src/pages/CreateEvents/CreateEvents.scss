@@ -13,4 +13,50 @@
   width: 500px;
   height: 300px;
   padding-left: 20px;
+  object-fit: cover;
 }
+
+
+.create__input {
+  
+}
+
+.create-wrapper {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.create-choice {
+  position: absolute;
+  margin-top: 10px;
+  padding: 10px 0;
+  left: 20px;
+  top: 570px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 150px;
+  display: none;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.create-choice.open {
+  display: block;
+}
+
+.create-item {
+  font-family: Roboto;
+  padding: 10px;
+  cursor: pointer;
+  list-style-type: none;
+  color: black;
+  font-size: 15px;
+
+  &:hover {
+    background: #f0f0f0;
+    color: #3762f0;
+  }
+}
+
+
