@@ -3,7 +3,6 @@ import './FindTickets.scss'
 import Card from '../../components/UI/card/Card.jsx'
 import Footer from '../../components/Footer/Footer';
 import defaultEvents from '../../constants/events.js'
-import Category from '../../components/UI/Category/Category';
 
 export default function FindTickets() {
   const [events, setEvents] = useState([]);

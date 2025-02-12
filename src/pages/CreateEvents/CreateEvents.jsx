@@ -1,20 +1,41 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer.jsx'
+import './CreateEvents.scss'
 
 export default function CreateEvents() {
-  const [inputFile, setInputFile] = useState("")
   const [inputTitle, setInputTitle] = useState(""); 
   const [inputTime, setInputTime] = useState(""); 
   const [inputPrice, setInputPrice] = useState("");
   const [inputDescr, setInputDescr] = useState("");
   const [inputCity, setInputCity] = useState(""); 
   
-  const [image, setImage] = useState('../../../public/Card-1.png')
+  const [image, setImage] = useState(null)
   const [tag, setTag] = useState() 
   const [events, setEvents] = useState([]);
 
   const navigate = useNavigate();  
+
+  useEffect (() => {
+    const savedImage = localStorage.getItem('userImage')
+    if (savedImage) {
+      setImage(savedImage)
+    }
+  }, [])
+
+
+  const handleImageUpload = (event) => {
+    const file = event.target.files[0]
+    if (file) {
+      const reader = new FileReader()
+      reader.onloadend = () => {
+        const base64Image = reader.result;
+        setImage(base64Image)
+        localStorage.setItem("userImage", base64Image)
+      };
+      reader.readAsDataURL(file)
+    }
+  }
 
 
   useEffect(() => {
@@ -25,8 +46,8 @@ export default function CreateEvents() {
   function handleClick() {
     const newEvent = {
       id: Date.now(),
-      tag: tag,
       img: image,
+      tag: tag,
       title: inputTitle,
       time: inputTime,
       price: inputPrice,
@@ -49,6 +70,12 @@ export default function CreateEvents() {
 
   return (
     <div className="input__wrapper">
+      <input 
+        type="file" 
+        accept='*image/*' 
+        onChange={handleImageUpload} 
+      />
+      {image && <img src={image} alt="" className='create__image' />}
       <input 
         type="text" 
         value={inputTitle} 
