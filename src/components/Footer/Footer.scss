@@ -103,13 +103,36 @@
 }
 
 .footer__contact-link {
-    display: block;
+    display: inline-block;
+    position: relative;
     text-decoration: none;
     color: #CFD3D7;
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
     font-weight: 300;
     line-height: 150%;
+    transition: color 0.3s ease-in-out;
 }
+
+.footer__contact-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Расстояние от текста */
+    width: 0%;
+    height: 2px;
+    background-color: #007bff; /* Цвет подчёркивания */
+    transition: width 0.3s ease-in-out;
+}
+
+.footer__contact-link:hover::after {
+    width: 100%;
+}
+
+.footer__contact-link:hover {
+    color: #ffffff; /* Можно сделать текст ярче при наведении */
+}
+
+
 
 .footer__social-item {
     margin-bottom: 20px;
@@ -164,4 +187,9 @@
     color: white;
     border: none;
     cursor: pointer;
+    transition: 0.2s ease-in-out;
+
+    &:hover {
+        background-color: #007bff;
+    }
   } 

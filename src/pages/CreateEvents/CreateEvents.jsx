@@ -15,7 +15,7 @@ export default function CreateEvents() {
   const [events, setEvents] = useState([]);
 
   const [week, setWeek] = useState(""); 
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const weeks = ["Monday", "Thuesday", "Wensday", "Thurday", "Friday", "Saturday", "Sunday"];
 
@@ -83,12 +83,6 @@ export default function CreateEvents() {
 
     
     <div className="input__wrapper">
-      <input 
-        type="file" 
-        accept='*image/*' 
-        onChange={handleImageUpload} 
-      />
-      {image && <img src={image} alt="" className='create__image' />}
 
       <div className="create-wrapper" onClick={() => setIsOpen(!isOpen)}>
             <div className={`create-choice ${isOpen ? "open" : ""}`}>
@@ -139,6 +133,12 @@ export default function CreateEvents() {
         onChange={(e) => setInputCity(e.target.value)}  
         placeholder="City"
       />
+      <input 
+        type="file" 
+        accept='*image/*' 
+        onChange={handleImageUpload} 
+      />
+      {image && <img src={image} alt="" className='create__image' />}
       <button onClick={handleClick}>Создать событие</button>
 
       <Footer />

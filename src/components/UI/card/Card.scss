@@ -2,9 +2,10 @@
     width: 300px;
     height: 500px;
     border-radius: 10px 10px 0 0;
-    background-color: #F2F2F2;
+    background-color: #fafafa;
     display: flex;
     flex-direction: column; 
+    transition: 0.3s;
     &__tag {
         margin: 10px 0;
         padding-left: 13px; 
@@ -50,4 +51,12 @@
         font-size: 16px;
         line-height: 1.4; 
     }
+}
+
+.card:hover {
+    background-color: rgb(240, 240, 240);
+    -webkit-box-shadow: 9px 9px 15px -14px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 9px 9px 15px -14px rgba(66, 68, 90, 1);
+    box-shadow: 9px 9px 15px -14px rgba(66, 68, 90, 1);
+    cursor: pointer;
 }

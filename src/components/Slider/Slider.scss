@@ -1,52 +1,52 @@
 .slider {
-    position: relative;
+  position: relative;
+  width: 1200px;
+  height: 400px;
+  margin: 0 auto;
+  border-radius: 5px;
+  overflow: hidden;
+
+  .slides {
     width: 1200px;
     height: 400px;
-    margin: 0 auto;
-    border-radius: 5px;
-    overflow: hidden;
-
-    .slides {
-      width: 1200px;
-      height: 400px;
-      object-fit: cover;
-    }
+    object-fit: cover;
   }
-  
-  .controls {
-    position: absolute;
-    top: 50%;
-    width: 100%;
+}
+
+.controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+
+  &__button {
     display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 20px; 
+}
 
-    &__button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: none;
-      background-color: white;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      margin: 0 20px; 
-  }
-  
-  
 
-    .arrow-left {
-        width: 25px;
-        height: 25px;
-    }
-    .arrow-right {
-        transform: scaleX(-1);
-        width: 25px;
-        height: 25px;
-    }
 
+  .arrow-left {
+      width: 25px;
+      height: 25px;
   }
-  
-  .controls__button:hover {
-    border: 2px solid rgb(182, 182, 182);
+  .arrow-right {
+      transform: scaleX(-1);
+      width: 25px;
+      height: 25px;
   }
+
+}
+
+.controls__button:hover {
+  border: 2px solid rgb(182, 182, 182);
+} 

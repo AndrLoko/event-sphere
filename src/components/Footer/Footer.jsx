@@ -34,7 +34,7 @@ export default function Footer() {
                             </li>
                             <li className="footer__contact-item">
                                 <img src="../../../public/email.png" alt="" className="footer__contact-icon" />
-                                <p className="footer__contact-text">andrew@gmail.com</p>
+                                <p className="footer__contact-text"> andrew@gmail.com </p>
                             </li>
                             <li className="footer__contact-item">
                                 <img src="../../../public/call.png" alt="" className="footer__contact-icon" />

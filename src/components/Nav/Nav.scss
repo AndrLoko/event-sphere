@@ -55,6 +55,7 @@
         background-color: #3762F0;
         border: none;
         border-radius: 50%; 
+        transition: 0.2s ease-in-out;
     
 
         & > img {
@@ -78,23 +79,35 @@
     }
 
     &__link {
-        
         color: #39364F;
         text-decoration: none;
         cursor: pointer;
         margin-right: 40px;
         font-size: 13px;
         font-weight: 400;
-        
+        transition: color 0.3s ease;
+    
+        &:hover {
+            
+            color: #3160D7;
+        }
     }
+        
+        
+    
     &__link-btn {
         color: white;
         background-color: #3762F0;
         padding: 10px 20px;
         border-radius: 100px;
+        transition: 0.2s ease-in-out;
+        
         &:hover {
             background-color: #1c4ae4;
+            color: white;
         }
     }
     
 }
+
+
