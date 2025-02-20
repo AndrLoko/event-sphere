@@ -1,78 +1,100 @@
-import { useState } from "react";
+import React, { useState } from 'react';
+import './SignUp.css'; // Importing the stylesheet
+import { useNavigate } from 'react-router';
 
-const Register = () => {
-    const [formData, setFormData] = useState({
-        username: "",
-        email: "",
-        password: ""
-    });
-    const [message, setMessage] = useState("");
+export default function SignUp() {
+  // Form state
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password: ""
+  });
 
-    // Обновление состояния формы
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
+  // Message for the user
+  const [message, setMessage] = useState("");
+  const navigate = useNavigate();  
 
-    // Валидация email
-    const validateEmail = (email) => {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    };
+  // Handler for form value changes
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
 
-    // Обработка регистрации
-    const handleSubmit = (e) => {
-        e.preventDefault();
+  // Email validation using regular expression
+  const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-        if (formData.username.length < 3) {
-            setMessage("Имя пользователя должно быть не менее 3 символов");
-            return;
-        }
-        if (!validateEmail(formData.email)) {
-            setMessage("Введите корректный Email");
-            return;
-        }
-        if (formData.password.length < 6) {
-            setMessage("Пароль должен быть не менее 6 символов");
-            return;
-        }
+  // Form submission handler
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-        // Сохранение данных в LocalStorage (эмуляция регистрации)
-        localStorage.setItem("user", JSON.stringify(formData));
-        setMessage("Регистрация успешна!");
-    };
+    // Username validation
+    if (formData.username.length < 3) {
+      setMessage("Username must be at least 3 characters long");
+      return;
+    }
 
-    return (
-        <div>
-            <h2>Регистрация</h2>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    name="username"
-                    placeholder="Имя пользователя"
-                    value={formData.username}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Пароль"
-                    value={formData.password}
-                    onChange={handleChange}
-                    required
-                />
-                <button type="submit">Зарегистрироваться</button>
-            </form>
-            {message && <p>{message}</p>}
+    // Email validation
+    if (!validateEmail(formData.email)) {
+      setMessage("Please enter a valid email");
+      return;
+    }
+
+    // Password validation
+    if (formData.password.length < 6) {
+      setMessage("Password must be at least 6 characters long");
+      return;
+    }
+
+    // Simulating registration (saving data to LocalStorage)
+    localStorage.setItem("user", JSON.stringify(formData));
+    setMessage("Registration successful!");
+
+    navigate('/'); 
+  };
+
+  return (
+    <div className="signup-container">
+      <h2 className="signup-heading">Registration</h2>
+      <form className="signup-form" onSubmit={handleSubmit}>
+        <div className="form-group">
+          <input
+            type="text"
+            name="username"
+            className="form-input"
+            placeholder="Username"
+            value={formData.username}
+            onChange={handleChange}
+            required
+          />
         </div>
-    );
-};
-
-export default Register;
+        <div className="form-group">
+          <input
+            type="email"
+            name="email"
+            className="form-input"
+            placeholder="Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-group">
+          <input
+            type="password"
+            name="password"
+            className="form-input"
+            placeholder="Password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <button type="submit" className="submit-btn">Sign Up</button>
+      </form>
+      {message && <p className="message">{message}</p>}
+    </div>
+  );
+}
