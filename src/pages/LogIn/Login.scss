@@ -1,0 +1,62 @@
+.login__container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login__heading {
+    display: flex;
+    font-family: Roboto;
+    font-weight: 400;
+    text-align: center;
+    color: #007bff;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .login__form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form__group {
+    margin-bottom: 15px;
+  }
+  
+  .form__input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .form__input:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  .submit__btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .submit__btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .message {
+    text-align: center;
+    color: rgb(214, 0, 0);
+    margin-top: 10px;
+  }
+  

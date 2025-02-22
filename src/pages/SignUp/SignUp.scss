@@ -1,4 +1,4 @@
-.signup-container {
+.signup__container {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
@@ -7,7 +7,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.signup-heading {
+.signup__heading {
   font-family: Roboto;
   font-weight: 400;
   text-align: center;
@@ -16,16 +16,16 @@
   margin-bottom: 20px;
 }
 
-.signup-form {
+.signup__form {
   display: flex;
   flex-direction: column;
 }
 
-.form-group {
+.form__group {
   margin-bottom: 15px;
 }
 
-.form-input {
+.form__input {
   width: 100%;
   padding: 10px;
   font-size: 1rem;
@@ -34,12 +34,12 @@
   box-sizing: border-box;
 }
 
-.form-input:focus {
+.form__input:focus {
   outline: none;
   border-color: #007bff;
 }
 
-.submit-btn {
+.submit__btn {
   background-color: #007bff;
   color: white;
   padding: 12px;
@@ -49,7 +49,7 @@
   cursor: pointer;
 }
 
-.submit-btn:hover {
+.submit__btn:hover {
   background-color: #0056b3;
 }
 
