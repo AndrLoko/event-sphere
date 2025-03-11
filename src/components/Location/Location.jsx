@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Location.scss";
-import locationIcon from "../../../public/location-arrow.svg";
+import locationIcon from "/location-arrow.svg";
 
 export default function Location() {
   const [selectedCity, setSelectedCity] = useState(""); 

@@ -5,9 +5,9 @@ const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const slides = [
-    '/public/Slide-1.jpg',
-    '/public/Slide-2.jpeg',
-    '/public/Slide-3.jpg',
+    '/Slide-1.jpg',
+    '/Slide-2.jpeg',
+    '/Slide-3.jpg',
   ];
 
 
@@ -32,14 +32,14 @@ const Slider = () => {
       <div className="controls">
         <button onClick={prevSlide} className="controls__button">
           <img
-            src="../../../public/arrow.png"
+            src="/arrow.png"
             className="arrow-left"
             alt="left arrow"
           />
         </button>
         <button onClick={nextSlide} className="controls__button">
           <img
-            src="../../../public/arrow.png"
+            src="/arrow.png"
             className="arrow-right"
             alt="right arrow" 
           />

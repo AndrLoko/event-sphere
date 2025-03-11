@@ -1,8 +1,8 @@
-import {useState, useEffect} from 'react'
-import './FindTickets.scss'
-import Card from '../../components/UI/card/Card.jsx'
+import React, { useState, useEffect } from 'react';
+import './FindTickets.scss';
+import Card from '../../components/UI/card/Card';
 import Footer from '../../components/Footer/Footer';
-import defaultEvents from '../../constants/events.js'
+import defaultEvents from '../../constants/events.js';
 
 export default function FindTickets() {
   const [events, setEvents] = useState([]);

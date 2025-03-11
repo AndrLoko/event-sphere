@@ -1,7 +1,7 @@
 const defaultEvents = [
     {
       id: 1,
-      image: '../../public/Card-2.jpg',
+      image: '/Card-2.jpg',
       title: 'Music Concert: Rock Legends Live',
       week: 'Monday',
       time: '7:30 PM',
@@ -10,7 +10,7 @@ const defaultEvents = [
     },
     {
       id: 2,
-      image: '../../public/Card-3.jpg',
+      image: '/Card-3.jpg',
       title: 'Tech Conference 2025: Innovation for the Future',
       week: 'Monday',
       time: '7:30 PM',
@@ -19,7 +19,7 @@ const defaultEvents = [
     },
     {
       id: 3,
-      image: '../../public/Card-4.jpg',
+      image: '/Card-4.jpg',
       title: 'Food Festival: Tastes of the World',
       week: 'Monday',
       time: '7:30 PM',
@@ -28,7 +28,7 @@ const defaultEvents = [
     },
     {
       id: 4,
-      image: '../../public/Card-5.jpg',
+      image: '/Card-5.jpg',
       title: 'Wellness Retreat: Mind & Body Healing',
       week: 'Monday',
       time: '7:30 PM',

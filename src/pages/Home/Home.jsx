@@ -27,6 +27,8 @@ export default function Home() {
     setEvents(storedEvents);
   }, []);
 
+  
+
 
   return (
     <main>
@@ -34,7 +36,7 @@ export default function Home() {
       <div className="container">
         <div className="grid__categories">
           {categories.map((category, index) => (
-            <Category key={index} link={`../../../public/${category.link}`} text={category.text} />
+            <Category key={index} link={`/${category.link}`} text={category.text} />
           ))}
         </div>
 

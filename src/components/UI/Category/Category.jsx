@@ -1,7 +1,7 @@
 import React from 'react'
-import './category.scss'
+import './Category.scss'
 
-export default function category({ link, text }) {
+export default function Category({ link, text }) {
   return (
     <>
         <div className="category">

@@ -11,12 +11,12 @@ export default function Nav() {
     <nav>
         <div className="nav__wrapper">
             <Link to="/" className='logo'>
-              <img src='../../logo.png' className="logo__img"></img>
+              <img src='/logo.png' className="logo__img"></img>
             </Link>
             <p className="logo__text">EVENTSPHERE</p>
             <div className="nav__search">
               <input type="text" className='nav__search-input'></input>
-              <button className="nav__search-btn"><img src="../../../public/search.png" alt="" /></button>
+              <button className="nav__search-btn"><img src="/search.png" alt="" /></button>
             </div>
             <ul className="nav__list">
                 <li className='nav__item'><Link className="nav__link" to='/create-events'>Create Events</Link></li>

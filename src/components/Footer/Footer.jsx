@@ -29,15 +29,15 @@ export default function Footer() {
                                 <h2 className="footer__contact-title">Get in Touch</h2>
                             </li>
                             <li className="footer__contact-item">
-                                <img src="../../../public/location.png" alt="" className="footer__contact-icon" />
+                                <img src="/location.png" alt="" className="footer__contact-icon" />
                                 <adress className="footer__contact-text">8819 Ohio St. South Gate, CA 90280</adress>
                             </li>
                             <li className="footer__contact-item">
-                                <img src="../../../public/email.png" alt="" className="footer__contact-icon" />
+                                <img src="/email.png" alt="" className="footer__contact-icon" />
                                 <p className="footer__contact-text"> andrew@gmail.com </p>
                             </li>
                             <li className="footer__contact-item">
-                                <img src="../../../public/call.png" alt="" className="footer__contact-icon" />
+                                <img src="/call.png" alt="" className="footer__contact-icon" />
                                 <a href="tel:+79991112233" className='footer__contact-text'>+48 999 999 999</a>
                             </li>
                         </ul>
