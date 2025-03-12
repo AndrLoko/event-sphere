@@ -36,3 +36,48 @@
     grid-template-columns: repeat(4, 1fr); 
     row-gap: 20px;
 }
+
+@media (max-width: 1270px) {
+    .grid__card {
+        display: grid;
+        grid-template-columns: repeat((3, 1fr));
+    }
+}
+
+
+@media (max-width: 768px) {
+    .grid__card {
+        display: grid;
+        grid-template-columns: repeat((2, 1fr));
+    }
+}
+
+
+@media (max-width: 660px) {
+    .grid__card {
+        display: grid;
+        grid-template-columns: 1fr; /* Одна колонка */
+        justify-items: center; /* Центрируем элементы */
+        gap: 20px; /* Отступы между карточками */
+        width: 100%;
+    }
+}
+@media (max-width: 1000px ) {
+    .grid__categories {
+        grid-template-columns: repeat((4, 1fr));
+        grid-gap: 40px;
+    }
+}
+@media (max-width: 600px ) {
+    .grid__categories {
+        grid-template-columns: repeat((3, 1fr));
+        grid-gap: 40px;
+    }
+}
+
+@media (max-width: 440px ) {
+    .grid__categories {
+        grid-template-columns: repeat((2, 1fr));
+        grid-gap: 40px;
+    }
+}

@@ -1,7 +1,7 @@
 .find-tickets__grid {
     display: grid;
     margin-top: 55px;
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(1, 1fr); 
     row-gap: 20px;
 }
 
@@ -83,4 +83,11 @@
     font-family: Roboto;
     color: rgb(27, 27, 27);
     margin-top: 70px;
+}
+
+@media (max-width: 800px) {
+    .find-default__grid {
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 0;
+    }
 }

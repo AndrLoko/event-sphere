@@ -30,7 +30,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     padding-top: 90px;
-    justify-items: center; /* Центрирует все элементы по горизонтали */
+    justify-items: center; 
 }
 
 .footer__grid > :first-child {
@@ -193,3 +193,59 @@
         background-color: #007bff;
     }
   } 
+
+  @media (max-width: 1100px) {
+    .footer__grid {
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center; /* Центрируем элементы */
+        row-gap: 50px; /* Сделал отступ поменьше */
+        width: 100%;
+    }
+    
+    .footer__wrapper {
+        height: auto; /* Убираем фиксированную высоту */
+
+
+
+    }
+
+    .footer__social-list {
+        text-align: center;
+    }
+
+    .footer__info-item {
+
+    }
+}
+
+  @media (max-width: 650px) {
+    .footer__grid {
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center; /* Центрирует элементы */
+
+    }
+    .footer__social-list {
+        justify-items: center;
+    }
+    .footer__info-item {
+       margin: 0 auto;
+    }
+
+    .footer__contact-title {
+        margin: 0 auto;
+    }
+
+    .footer__info {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .footer__email {
+        text-align: center;
+    }
+    .footer__email-btn {
+        align-items: center;
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+  }

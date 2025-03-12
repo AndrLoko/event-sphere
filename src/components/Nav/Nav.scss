@@ -107,7 +107,40 @@
             color: white;
         }
     }
+
     
 }
 
+.nav__burger {
+    display: none;
 
+}
+
+
+@media (max-width: 800px) {
+    .logo__text {
+        display: none;
+    }
+}
+
+@media (max-width: 550px) {
+    .nav__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .nav__list {
+        display: none;
+    }
+    .nav__burger {
+        display: flex;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    .nav__burger-img {
+        height: 40px;
+        width: 40px;
+        justify-self: end;
+    }
+}

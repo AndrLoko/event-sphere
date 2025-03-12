@@ -50,3 +50,9 @@
 .controls__button:hover {
   border: 2px solid rgb(182, 182, 182);
 } 
+
+@media (max-width: 768px) {
+  .slider {
+    display: none;
+  }
+}

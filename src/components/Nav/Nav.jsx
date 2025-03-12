@@ -14,10 +14,7 @@ export default function Nav() {
               <img src='/logo.png' className="logo__img"></img>
             </Link>
             <p className="logo__text">EVENTSPHERE</p>
-            <div className="nav__search">
-              <input type="text" className='nav__search-input'></input>
-              <button className="nav__search-btn"><img src="/search.png" alt="" /></button>
-            </div>
+            <button className='nav__burger'><img className='nav__burger-img' src="/burger-menu.png" alt="gravisio" /></button>
             <ul className="nav__list">
                 <li className='nav__item'><Link className="nav__link" to='/create-events'>Create Events</Link></li>
                 <li className='nav__item'><Link className="nav__link" to='/find-tickets'>Find my tickets</Link></li>
