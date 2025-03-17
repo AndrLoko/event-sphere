@@ -4,33 +4,32 @@ import Footer from '../../components/Footer/Footer.jsx';
 import './CreateEvents.scss';
 
 export default function CreateEvents() {
-  const [inputTitle, setInputTitle] = useState("");
-  const [inputTime, setInputTime] = useState("");
+  const [inputTitle, setInputTitle] = useState(""); 
+  const [inputTime, setInputTime] = useState(""); 
   const [inputPrice, setInputPrice] = useState("");
   const [inputDescr, setInputDescr] = useState("");
-  const [inputCity, setInputCity] = useState("");
+  const [inputCity, setInputCity] = useState(""); 
   
   const [image, setImage] = useState(null);
-  const [tag, setTag] = useState();
+  const [tag, setTag] = useState(""); 
   const [events, setEvents] = useState([]);
 
-  const [week, setWeek] = useState("");
-  const [isOpen, setIsOpen] = useState(false);
+  const [week, setWeek] = useState(""); 
+  const [isOpen, setIsOpen] = useState(false); // Включаем по умолчанию закрыто
 
   const weeks = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
   const handleSelect = (week) => {
     setWeek(week);
-    setIsOpen(false);
+    setIsOpen(false); 
   };
 
-  const navigate = useNavigate();
+  const navigate = useNavigate();  
 
   useEffect(() => {
-    const savedImage = localStorage.getItem('userImage');
-    if (savedImage) {
-      setImage(savedImage);
-    }
+    // Считываем события из localStorage
+    const eventsFromStorage = JSON.parse(localStorage.getItem("events")) || [];
+    setEvents(eventsFromStorage);
   }, []);
 
   const handleImageUpload = (event) => {
@@ -46,12 +45,7 @@ export default function CreateEvents() {
     }
   };
 
-  useEffect(() => {
-    const eventsFromStorage = JSON.parse(localStorage.getItem("events")) || [];
-    setEvents(eventsFromStorage);
-  }, []);
-
-  function handleClick() {
+  const handleClick = () => {
     const newEvent = {
       id: Date.now(),
       img: image,
@@ -68,96 +62,117 @@ export default function CreateEvents() {
     setEvents(updatedEvents);
     localStorage.setItem("events", JSON.stringify(updatedEvents));
 
+    // Очистка формы
     setInputTitle("");
     setInputTime("");
     setInputPrice("");
     setInputDescr("");
+    setInputCity("");
+    setImage(null);
+    setTag("");
+    setWeek("");
+    setIsOpen(false);
 
+    // Переход на главную страницу
     navigate('/');
-  }
+  };
 
   return (
-      <div>
-        <div className="input__wrapper">
-          <h2 className="form-heading">Create Event</h2>
+    <div className='events'>
+      <img src="/create-event.png" className='events__img' alt="" />
+      <div className="input__wrapper">
+        <h2 className='input__title'>Create Event</h2>
 
-          <div className="create-wrapper" onClick={() => setIsOpen(!isOpen)}>
-            <div className={`create-choice ${isOpen ? "open" : ""}`}>
-              {weeks.map((week, index) => (
-                <div
-                  key={index}
-                  className="create-item"
-                  onClick={() => handleSelect(week)}
-                >
-                  {week}
-                </div>
-              ))}
-            </div>
+        {/* Image Upload */}
+        <div className="image-upload-card">
+          <input 
+            type="file" 
+            accept="image/*" 
+            onChange={handleImageUpload} 
+          />
+          {image && <img src={image} alt="Event" className="create__image" />}
+        </div>
+
+        {/* Week Selection */}
+        <div className="create-wrapper" onClick={() => setIsOpen(!isOpen)}>
+          <div className={`create-choice ${isOpen ? "open" : ""}`}>
+            {weeks.map((week, index) => (
+              <div
+                key={index}
+                className="create-item"
+                onClick={() => handleSelect(week)}
+              >
+                {week}
+              </div>
+            ))}
           </div>
+        </div>
 
-          <input
-            type="text"
-            className="input-field"
-            value={inputTitle}
-            onChange={(e) => setInputTitle(e.target.value)}
+        {/* Event Title Input */}
+        <div className="input-card">
+          <input 
+            type="text" 
+            value={inputTitle} 
+            onChange={(e) => setInputTitle(e.target.value)}  
             placeholder="Event Title"
           />
-          
+        </div>
+
+        {/* Week Input */}
+        <div className="input-card">
           <input
             type="text"
-            className="input-field"
+            className="create__input"
             placeholder="Week"
             value={week}
             onClick={() => setIsOpen(!isOpen)}
           />
+        </div>
 
-          <input
-            type="time"
-            className="input-field"
-            value={inputTime}
-            onChange={(e) => setInputTime(e.target.value)}
+        {/* Event Time Input */}
+        <div className="input-card">
+          <input 
+            type="time" 
+            value={inputTime} 
+            onChange={(e) => setInputTime(e.target.value)} 
           />
+        </div>
 
-          <input
-            type="number"
-            className="input-field"
-            value={inputPrice}
-            onChange={(e) => setInputPrice(e.target.value)}
+        {/* Event Price Input */}
+        <div className="input-card">
+          <input 
+            type="number" 
+            value={inputPrice} 
+            onChange={(e) => setInputPrice(e.target.value)} 
             placeholder="Event Price"
           />
+        </div>
 
-          <input
-            type="text"
-            className="input-field"
-            value={inputDescr}
-            onChange={(e) => setInputDescr(e.target.value)}
+        {/* Event Description Input */}
+        <div className="input-card">
+          <textarea 
+            value={inputDescr} 
+            onChange={(e) => setInputDescr(e.target.value)} 
             placeholder="Event Description"
           />
+        </div>
 
-          <input
-            type="text"
-            className="input-field"
-            value={inputCity}
-            onChange={(e) => setInputCity(e.target.value)}
+        {/* Event City Input */}
+        <div className="input-card">
+          <input 
+            type="text" 
+            value={inputCity} 
+            onChange={(e) => setInputCity(e.target.value)}  
             placeholder="City"
           />
-
-          <input
-            type="file"
-            className="input-file"
-            accept="*image/*"
-            onChange={handleImageUpload}
-          />
-
-          {image && <img src={image} alt="Event" className="create__image" />}
-
-          <button onClick={handleClick} className="submit-button">
-            Create Event
-          </button>
-          
         </div>
-        <Footer />
+
+        {/* Create Event Button */}
+        <button onClick={handleClick} className="submit-button">Create Event</button>
       </div>
-    
+      <div>
+    </div>
+    </div>
+
   );
 }

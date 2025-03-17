@@ -144,3 +144,50 @@
         justify-self: end;
     }
 }
+
+.modal {
+    position: absolute;
+    top: 60px; /* Отступ сверху, чтобы окно появлялось под иконкой */
+    right: 0;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 200px; /* Ширина модального окна */
+    z-index: 1000;
+    display: block;
+  }
+  
+  .modal__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .modal__item {
+    margin: 10px 0;
+  }
+  
+  .modal__link {
+    text-decoration: none;
+    color: #3762F0;
+    font-size: 16px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  
+    &:hover {
+      color: #1c4ae4;
+    }
+  }
+  
+  @media (max-width: 550px) {
+    .modal {
+      width: 170px; /* Уменьшаем ширину окна на мобильных */
+    }
+  
+    .modal__link {
+      font-size: 14px; /* Меньше размер шрифта на мобильных */
+      color: #39364F;
+      font-family: sans-serif
+    }
+  }

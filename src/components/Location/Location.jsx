@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Location.scss";
 import locationIcon from "/location-arrow.svg";
 
-export default function Location() {
+export default function Location({ onCitySelect }) {
   const [selectedCity, setSelectedCity] = useState(""); 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -10,38 +10,38 @@ export default function Location() {
 
   const handleSelect = (city) => {
     setSelectedCity(city);
-    setIsOpen(false); 
+    setIsOpen(false);
+    onCitySelect(city);  // Передаем выбранный город в родительский компонент
   };
 
   return (
-    <>
-        <div className="location">
-        <form>
-            <label htmlFor="cities" className="select">
-            Browsing events in
-            </label>
-            <div className="select-wrapper" onClick={() => setIsOpen(!isOpen)}>
-            <img src={locationIcon} alt="Location Icon" className="select-icon" />
-            <div className={`select-choice ${isOpen ? "open" : ""}`}>
-                {cities.map((city, index) => (
-                <div
-                    key={index}
-                    className="select-item"
-                    onClick={() => handleSelect(city)}
-                >
-                    {city}
-                </div>
-                ))}
-            </div>
-            </div>
-        </form>
-        <input
-            type="text"
-            className="location__input"
-            placeholder="Choose a location"
-            value={selectedCity}
-        />
+    <div className="location">
+      <form>
+        <label htmlFor="cities" className="select">
+          Browsing events in
+        </label>
+        <div className="select-wrapper" onClick={() => setIsOpen(!isOpen)}>
+          <img src={locationIcon} alt="Location Icon" className="select-icon" />
+          <div className={`select-choice ${isOpen ? "open" : ""}`}>
+            {cities.map((city, index) => (
+              <div
+                key={index}
+                className="select-item"
+                onClick={() => handleSelect(city)}
+              >
+                {city}
+              </div>
+            ))}
+          </div>
         </div>
-    </>
+      </form>
+      <input
+        type="text"
+        className="location__input"
+        placeholder="Choose a location"
+        value={selectedCity}
+        readOnly  // Поле доступно только для чтения
+      />
+    </div>
   );
 }

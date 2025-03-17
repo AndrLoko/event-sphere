@@ -23,6 +23,7 @@ export default function router() {
             <Route path='/signup' element={<SignUp />} />
             <Route path='/*' element={<NotFound />} />
         </Routes>
+        <Footer />
   </>
   )
 }

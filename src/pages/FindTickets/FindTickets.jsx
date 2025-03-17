@@ -42,8 +42,6 @@ export default function FindTickets() {
           
         </div>
       </div>
-
-    <Footer />
     </main>
   )
 }
