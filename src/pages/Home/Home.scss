@@ -37,6 +37,10 @@
     row-gap: 20px;
 }
 
+.no-events__card {
+    font-family: sans-serif;
+}
+
 @media (max-width: 1270px) {
     .grid__card {
         display: grid;

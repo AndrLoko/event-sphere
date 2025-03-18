@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import './Slider.scss';
 
 const Slider = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const swiperRef = useRef(null); // Ссылка на Swiper для ручного управления
 
   const slides = [
     '/Slide-1.jpg',
@@ -10,41 +15,27 @@ const Slider = () => {
     '/Slide-3.jpg',
   ];
 
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-  };
-
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? slides.length - 1 : prevIndex - 1
-    );
-  };
-
   return (
     <div className="slider">
-      <img
-        src={slides[currentIndex]}
-        className="slides"
-        alt={`Slide ${currentIndex + 1}`}
-      />
-      <div className="controls">
-        <button onClick={prevSlide} className="controls__button">
-          <img
-            src="/arrow.png"
-            className="arrow-left"
-            alt="left arrow"
-          />
-        </button>
-        <button onClick={nextSlide} className="controls__button">
-          <img
-            src="/arrow.png"
-            className="arrow-right"
-            alt="right arrow" 
-          />
-        </button>
-      </div>
+      <Swiper
+        ref={swiperRef} // Ссылка на Swiper
+        modules={[Navigation, Pagination, Autoplay]}
+        spaceBetween={50}
+        slidesPerView={1}
+        navigation={{
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        }}
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        loop
+      >
+        {slides.map((slide, index) => (
+          <SwiperSlide key={index}>
+            <img src={slide} className="slides" alt={`Slide ${index + 1}`} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };

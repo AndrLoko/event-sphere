@@ -15,12 +15,9 @@
   display: block; 
   max-width: 600px;
   padding: 50px;
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(59,59,233,1) 0%, rgba(0,212,255,1) 100%);
+  background-color: cornflowerblue;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-
   margin-right: 200px;
 }
 
@@ -140,15 +137,6 @@
   outline: none;
 }
 
-/* Стили для футера */
-footer {
-  text-align: center;
-  padding: 10px 0;
-  margin-top: 30px;
-  font-size: 0.9rem;
-  color: #777;
-}
-
 /* Мобильная версия */
 @media (max-width: 768px) {
   .input__wrapper {
@@ -180,7 +168,6 @@ footer {
   }
 }
 
-/* Для самых маленьких экранов (мобильные телефоны) */
 @media (max-width: 480px) {
   .input__wrapper {
     padding: 10px;
@@ -234,14 +221,23 @@ footer {
     padding: 30px;
     margin: 0 auto;
   }
+
+  .input__title {
+    display: none;
+  }
 }
 
 
 @media (max-width: 600px) {
+  .input__title {
+    display: none;
+  }
+  
   .events__img {
     display: none;
   }
   .input__wrapper {
     margin: 0 auto;
+    padding: 10px;
   }
 }

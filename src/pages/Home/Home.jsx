@@ -66,7 +66,7 @@ export default function Home() {
               <Card key={event.id} {...event} />
             ))
           ) : (
-            <p>No events found for the selected location.</p>
+            <p className='no-events__card'>No events found for the selected location.</p>
           )}
         </div>
       </div>

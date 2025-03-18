@@ -86,6 +86,15 @@
 }
 
 @media (max-width: 400px) {
+
+    .find-default__text {
+        display: none;
+    }
+
+    .find-default__grid::after  {
+        display: none;
+    }
+
     .find-tickets__error,
     .find-tickets__true,
     .find-default__text {
